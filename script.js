@@ -24,7 +24,13 @@ bodyEl.addEventListener("mousemove", function (event) {
 bodyEl.addEventListener("touchmove", function (event) {
   event.preventDefault();
   for (let touch of event.touches) {
-        createTrailElement(touch.clientX, touch.clientY);
+    createTrailElement(touch.clientX, touch.clientY);
+    let touchX = touch.clientX;
+    let touchY = touch.clientY;
+    let spanEl = document.createElement("span");
+
+    spanEl.style.left = touchX + "px";
+    spanEl.style.top = touchY + "px";
     bodyEl.appendChild(spanEl);
     const size = Math.random() * 100;
     spanEl.style.width = size + "px";
