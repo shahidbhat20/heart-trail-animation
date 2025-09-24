@@ -25,8 +25,8 @@ bodyEl.addEventListener("touchmove", function (event) {
   event.preventDefault();
   for (let touch of event.touches) {
     createTrailElement(touch.clientX, touch.clientY);
-    let touchX = touch.clientX;
-    let touchY = touch.clientY;
+    let touchX = event.clientX;
+    let touchY = event.clientY;
     let spanEl = document.createElement("span");
 
     spanEl.style.left = touchX + "px";
