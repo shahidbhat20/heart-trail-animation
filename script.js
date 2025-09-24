@@ -22,14 +22,9 @@ bodyEl.addEventListener("mousemove", function (event) {
 });
 
 
-window.addEventListener('deviceorientation', function(event) {
-    const alpha = event.alpha; // Z-axis rotation (0-360°)
-    const beta = event.beta;   // X-axis rotation (-180 to 180°)
-    const gamma = event.gamma; // Y-axis rotation (-90 to 90°)
-});
-
-// Device motion (accelerometer)
-window.addEventListener('devicemotion', function(event) {
-    const acceleration = event.acceleration;
-    const rotationRate = event.rotationRate;
+bodyEl.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+    for (let touch of event.touches) {
+        createTrailElement(touch.clientX, touch.clientY);
+    }
 });
