@@ -23,8 +23,8 @@ bodyEl.addEventListener("mousemove", function (event) {
 
 bodyEl.addEventListener("touchmove", function (event) {
   event.preventDefault();
-  for (let touch of event.touches) {
-    createTrailElement(touch.clientX, touch.clientY);
+  // for (let touch of event.touches) {
+  //   createTrailElement(touch.clientX, touch.clientY);
     let touchX = touch.clientX;
     let touchY = touch.clientY;
     let spanEl = document.createElement("span");
@@ -35,7 +35,7 @@ bodyEl.addEventListener("touchmove", function (event) {
     const size = Math.random() * 100;
     spanEl.style.width = size + "px";
     spanEl.style.height = size + "px";
-  }
+  // }
 
   setTimeout(() => {
     spanEl.remove();
