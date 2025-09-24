@@ -21,10 +21,17 @@ bodyEl.addEventListener("mousemove", function (event) {
   }, 3000);
 });
 
-
 bodyEl.addEventListener("touchmove", function (event) {
-    event.preventDefault();
-    for (let touch of event.touches) {
+  event.preventDefault();
+  for (let touch of event.touches) {
         createTrailElement(touch.clientX, touch.clientY);
-    }
+    bodyEl.appendChild(spanEl);
+    const size = Math.random() * 100;
+    spanEl.style.width = size + "px";
+    spanEl.style.height = size + "px";
+  }
+
+  setTimeout(() => {
+    spanEl.remove();
+  }, 3000);
 });
